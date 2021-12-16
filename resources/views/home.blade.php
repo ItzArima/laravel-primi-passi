@@ -35,6 +35,10 @@
             margin: 0 1rem;
         }
 
+        header nav a:hover{
+            border-bottom:2px solid white;
+        }
+
         .jumbo-container{
             height: 100vh;
             width: 100%;
@@ -58,15 +62,45 @@
             color: white;
         }
 
+        .jumbo-container h2{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 1rem;
+            color: white;
+            font-weight: 100;
+        }
+
         .jumbo-container h1 em{
             font-weight: 900;
             font-style: normal;
         }
 
-        .posts-container, .post{
+        .section-title{
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+            position:relative;
+            background-color: #0b0c0c;
+            background-position: center 50%;
+            background-size: cover;
+            color: white;
             display: flex;
-            justify-content: space-around;
-            margin-top: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .section-title h2{
+            font-weight: 100;
+        }
+
+        .section-title em{
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .posts-container{
+            display: flex;
         }
 
         .post{
@@ -75,16 +109,31 @@
             text-align: center;
             position: relative;
             align-items: center;
+            width: 20%;
+            overflow: hidden;
+            cursor: pointer;
         }
 
         .post img{
             filter: brightness(0.7);
+            width: 100%;
+            transition: all 0.3s;
         }
 
-        .post h2{
+        .post-text{
             position: absolute;
-            bottom: 3%;
+            bottom: -1%;
             color: white;
+            transition: all 0.3s;
+            height: 10%;
+        }
+
+        .post:hover .post-text{
+            bottom: 10%;
+        }
+
+        .post:hover img{
+            filter: brightness(0.5);
         }
 
         .active{
@@ -104,13 +153,19 @@
     <main>
         <div class="jumbo-container">
             <img src="https://picsum.photos/id/1063/1920/1080" alt="">
-            <h1>WELCOME TO MY FIRST <em>LARAVEL</em> WEB PAGE</h1>
+            <h1>WELCOME TO MY FIRST <em>LARAVEL</em> WEB PAGE</h1> 
+        </div>
+        <div class="section-title">
+            <h2>Check out our <em>Gallery</em></h2>
         </div>
         <div class="posts-container">
             @foreach ($posts as $post)
             <div class="post">
                 <img src="{{$post['image']}}" alt="">
-                <h2>{{$post['title']}}</h2>
+                <div class="post-text">
+                    <h2>{{$post['title']}}</h2>
+                    <p>{{$post['description']}}</p>
+                </div>    
             </div>
             @endforeach
         </div>    

@@ -17,15 +17,28 @@ Route::get('/', function () {
     $posts = [
         [
             "image" => "https://picsum.photos/id/1025/400",
-            "title" => "Title 1"
+            "title" => "Title 1",
+            "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores eveniet a."
         ],
         [
             "image" => "https://picsum.photos/id/101/400",
-            "title" => "Title 2"
+            "title" => "Title 2",
+            "description" => "Lorem ipsum dolor. Asperiores earum libero delectus dolores eveniet a."
         ],
         [
             "image" => "https://picsum.photos/id/1011/400",
-            "title" => "Title 3"
+            "title" => "Title 3",
+            "description" => "Consectetur adipisicing elit. Asperiores earum libero delectus dolores eveniet a."
+        ],
+        [
+            "image" => "https://picsum.photos/id/1070/400",
+            "title" => "Title 4",
+            "description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit."
+        ],
+        [
+            "image" => "https://picsum.photos/id/1082/400",
+            "title" => "Title 5",
+            "description" => "Asperiores earum libero delectus dolores eveniet a."
         ]
     ];
     return view('home', compact('posts'));
