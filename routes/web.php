@@ -14,5 +14,31 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    $posts = [
+        [
+            "image" => "https://picsum.photos/200",
+            "title" => "Title 1"
+        ],
+        [
+            "image" => "https://picsum.photos/200",
+            "title" => "Title 2"
+        ],
+        [
+            "image" => "https://picsum.photos/200",
+            "title" => "Title 3"
+        ]
+    ];
+    return view('home', compact('posts'));
+})->name('home');   
+
+Route::get('/blog', function () {
+    return view('blog');
+})->name('blog');    
+
+Route::get('/contacts', function () {
+    return view('contacts');
+})->name('contacts');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about');
