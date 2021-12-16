@@ -16,15 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $posts = [
         [
-            "image" => "https://picsum.photos/200",
+            "image" => "https://picsum.photos/id/1025/400",
             "title" => "Title 1"
         ],
         [
-            "image" => "https://picsum.photos/200",
+            "image" => "https://picsum.photos/id/101/400",
             "title" => "Title 2"
         ],
         [
-            "image" => "https://picsum.photos/200",
+            "image" => "https://picsum.photos/id/1011/400",
             "title" => "Title 3"
         ]
     ];
